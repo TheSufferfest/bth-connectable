@@ -1,7 +1,6 @@
 {
   "name": "bth-connectable",
   "version": "1.0.0",
-  "os": ["win32"],
   "description": "",
   "main": "index.js",
   "scripts": {
