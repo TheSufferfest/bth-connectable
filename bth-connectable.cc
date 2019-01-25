@@ -23,8 +23,14 @@ void IsConnectable(const FunctionCallbackInfo<Value>& args) {
   args.GetReturnValue().Set(BluetoothIsConnectable(0));
 }
 
+void EnableIncomingConnections(const FunctionCallbackInfo<Value>& args) {
+    Isolate* isolate = args.GetIsolate();
+  args.GetReturnValue().Set(BluetoothEnableIncomingConnections(0, TRUE));
+}
+
 void Initialize(Local<Object> exports) {
   NODE_SET_METHOD(exports, "connectable", IsConnectable);
+  NODE_SET_METHOD(exports, "enableConnections", EnableIncomingConnections);
 }
 
 NODE_MODULE(NODE_GYP_MODULE_NAME, Initialize)
